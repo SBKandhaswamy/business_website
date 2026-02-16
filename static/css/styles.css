@@ -5,8 +5,8 @@
   }
 
   :root {
-      --primary-color: #1e5f6f;
-      --secondary-color: #c9a860;
+      --primary-color: #024149;
+      --secondary-color: #af9254;
       --accent-cream: #f5ead3;
       --dark-text: #2d3436;
       --light-text: #f5ead3;
@@ -14,14 +14,14 @@
   }
 
   body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
       color: var(--dark-text);
       background-color: #fff;
       line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
+      font-family: serif;
       color: var(--primary-color);
       font-weight: 700;
   }
@@ -37,7 +37,7 @@
   }
 
   .navbar-brand {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', sans-serif;
       font-size: 1.8rem;
       font-weight: 900;
       color: var(--light-text) !important;
@@ -647,7 +647,7 @@
   .footer-content h5 {
       color: var(--light-text);
       margin-bottom: 1rem;
-      font-family: 'Playfair Display', serif;
+      font-family: 'Playfair Display', sans-serif;
   }
 
   .footer-content p, .footer-content a {
