@@ -476,8 +476,8 @@
                     <div class="footer-content">
                         <h5>Follow Us</h5>
                         <div class="social-icons">
-                            <a href="https://www.instagram.com/sbheritage_crafthouse">
-                              <i class="fa fa-instagram"></i>
+                            <a href="https://www.instagram.com/sbheritage_crafthouse" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
                             </a>
                             <a href="https://wa.me/919025836717?text=Hi%20SB%20Heritage%20Craft%20House" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
@@ -509,10 +509,6 @@
                         <div class="mb-3">
                             <label class="form-label">Product Name</label>
                             <input type="text" class="form-control" id="orderProduct" readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Price (₹)</label>
-                            <input type="text" class="form-control" id="orderPrice" readonly>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Quantity</label>
@@ -597,10 +593,9 @@
                         <div class="product-image">${product.image ? ('<img src="' + product.image + '" alt="' + product.name + '" class="product-img">') : (product.icon || '')}</div>
                         <div class="product-info">
                             <div class="product-name">${product.name}</div>
-                            <div class="product-price">${product.price}</div>
                             <p class="product-desc">${product.description}</p>
                             <div class="product-actions">
-                                <button class="btn-order" onclick="openOrderModal('${product.name}', '${product.price}')">
+                                <button class="btn-order" onclick="openOrderModal('${product.name}')">
                                     <i class="fas fa-shopping-cart"></i> Order
                                 </button>
                                 <a href="https://wa.me/919025836717?text=Hi%20SB%20Heritage%20Craft%20House%2C%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}" 
@@ -616,7 +611,7 @@
         }
 
         // OPEN ORDER MODAL
-        function openOrderModal(productName, price) {
+        function openOrderModal(productName) {
             // Reset the form first so we don't overwrite the product fields
             const orderForm = document.getElementById('orderForm');
             orderForm.reset();
@@ -624,7 +619,6 @@
 
             // Populate readonly product fields after resetting
             document.getElementById('orderProduct').value = productName;
-            document.getElementById('orderPrice').value = price;
 
             const modal = new bootstrap.Modal(document.getElementById('orderModal'));
             modal.show();
@@ -635,7 +629,6 @@
             event.preventDefault();
 
             const productName = document.getElementById('orderProduct').value;
-            const price = document.getElementById('orderPrice').value;
             const quantity = document.getElementById('orderQty').value;
             const customization = document.getElementById('orderCustomization').value;
             const name = document.getElementById('orderName').value;
@@ -650,7 +643,6 @@ NEW ORDER FROM SB HERITAGE CRAFT HOUSE
 
 PRODUCT DETAILS:
 - Product: ${productName}
-- Price: ${price}
 - Quantity: ${quantity}
 - Customization: ${customization || 'None specified'}
 
