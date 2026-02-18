@@ -214,62 +214,71 @@
         </div>
     </section>
 
-    <!-- BEFORE/AFTER GALLERY -->
+    <!-- PROJECT GALLERY CAROUSEL -->
     <section class="gallery-section" id="gallery">
         <div class="container-lg">
             <div class="section-title">
                 <h2>Project Gallery</h2>
                 <p style="text-align: center; margin-top: 1rem; color: #666;">A showcase of our finest work and client transformations</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="gallery-item">
-                        <div class="gallery-img">🪑</div>
-                        <div class="gallery-overlay">
-                            <div>Premium Dining Set</div>
+
+            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="static/img/cot.png" class="d-block w-100" alt="Premium Dining Set">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Premium Dining Set</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="static/img/main-door.png" class="d-block w-100" alt="Custom Main Door">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Custom Main Door</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="static/img/wooden-sofa.png" class="d-block w-100" alt="Bedroom & Living">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Bedroom & Living</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="static/img/cutting-board.png" class="d-block w-100" alt="Kitchen Design">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Kitchen Design</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="static/img/pooja-room-door.png" class="d-block w-100" alt="Temple Altar">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Temple Altar</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="static/img/wardrobe.png" class="d-block w-100" alt="Custom Designs">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Custom Designs</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="gallery-item">
-                        <div class="gallery-img">🚪</div>
-                        <div class="gallery-overlay">
-                            <div>Custom Main Door</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="gallery-item">
-                        <div class="gallery-img">🛏️</div>
-                        <div class="gallery-overlay">
-                            <div>Bedroom Furniture</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="gallery-item">
-                        <div class="gallery-img">🏠</div>
-                        <div class="gallery-overlay">
-                            <div>Kitchen Design</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="gallery-item">
-                        <div class="gallery-img">🙏</div>
-                        <div class="gallery-overlay">
-                            <div>Temple Altar</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="gallery-item">
-                        <div class="gallery-img">🎨</div>
-                        <div class="gallery-overlay">
-                            <div>Custom Designs</div>
-                        </div>
-                    </div>
-                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </section>
@@ -763,6 +772,18 @@ ${message}
                 }
             });
         });
+
+        // Initialize project carousel explicitly for autoplay and pause behavior
+        (function() {
+            const el = document.getElementById('projectCarousel');
+            if (el && typeof bootstrap !== 'undefined') {
+                new bootstrap.Carousel(el, {
+                    interval: 3000,
+                    ride: 'carousel',
+                    pause: 'hover'
+                });
+            }
+        })();
     </script>
 </body>
 </html>
